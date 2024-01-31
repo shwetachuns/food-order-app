@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order Details</title>
+</head>
+<body>
+    <h1>Food Order Details</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Breakfast Status</th>
+            <th>Lunch Status</th>
+            <th>Dinner Status</th>
+            <th>Fine Amount</th>
+        </tr>
+        {% for day in data.monthly_details %}
+        <tr>
+            <td>{{ day.date }}</td>
+            <td>{{ day.breakfast_status }}</td>
+            <td>{{ day.lunch_status }}</td>
+            <td>{{ day.dinner_status }}</td>
+            <td>{{ day.fine_amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>Monthly Total Fine: {{ data.monthly_total_fine }}</p>
+</body>
+</html>
